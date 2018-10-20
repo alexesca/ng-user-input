@@ -6,5 +6,21 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'ng-user-input';
+  inputValue: any;
+  lineItems = [
+    'Cars',
+    'Internet',
+    'Golf',
+    'Money',  
+    'Tesla',
+    'Deep Web'
+  ]
+
+
+  // Adds a new line item to the list
+  addLineItem(newLineItem: any) {
+    if(!newLineItem) return alert('No empty line items allowed!!! \n Enter a cool one!');
+    this.lineItems.unshift(newLineItem)
+    this.inputValue = '';
+  }
 }
